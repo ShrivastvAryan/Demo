@@ -22,7 +22,6 @@ const User= new mongoose.Schema({
     },
     amount_raised: {
         type: Number,
-        default: 0,
     },
     email: {
         type: String,

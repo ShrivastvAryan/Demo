@@ -4,7 +4,7 @@ const UserModel = require('../modals/user-modal');
 
 const registerUser = async (req, res) => {
       console.log("DEBUG req.body =>", req.body); 
-    const { name, email, password } = req.body;
+    const { name, email, password,amount_raised } = req.body;
 
     try {
         const existingUser = await UserModel.findOne({ email });
@@ -17,6 +17,7 @@ const registerUser = async (req, res) => {
         const newUser = new UserModel({
             name,
             email,
+            amount_raised,
             password: hashedPassword, 
         });
 
