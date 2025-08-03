@@ -39,7 +39,7 @@ const Hero = () => {
           return;
         }
 
-        const response = await fetch('http://localhost:5000/api/user/me', {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user/me`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -183,7 +183,7 @@ const Hero = () => {
        ))}
       </div>
        </div>
-       
+
         </div>
       </div>
     </div>

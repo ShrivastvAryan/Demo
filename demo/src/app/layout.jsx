@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Your App Title",
+  title: "SheCanFoundation",
   description: "Your app description",
 };
 
