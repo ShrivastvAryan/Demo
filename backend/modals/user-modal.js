@@ -17,7 +17,6 @@ const User= new mongoose.Schema({
     },
     ref_code:{
        type: String,
-       required: true,
        default: () => generateRefCode(8),
        unique: true,
     },

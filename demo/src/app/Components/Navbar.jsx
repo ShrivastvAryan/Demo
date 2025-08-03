@@ -1,6 +1,27 @@
+'use client'
 import React from 'react'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+import Link from 'next/link';
 
 const Navbar = () => {
+
+
+   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+    router.push('/Login');
+  };
+
   return (
     <>
       <nav className='w-full h-16 bg-white border-b border-gray-200 shadow-sm'>
@@ -40,13 +61,19 @@ const Navbar = () => {
             </div>
 
             {/* Login Section */}
-            <div className='flex items-center gap-4'>
-              <button className='hidden sm:block text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200'>
-                Sign In
+          <div className='flex items-center gap-4'>
+            {isLoggedIn ? (
+              <button
+                onClick={handleLogout}
+                className='text-gray-700 hover:text-red-600 font-medium transition-colors duration-200'
+              >
+                Logout
               </button>
-              <button className='text-white bg-blue-600 px-6 py-2 rounded-lg font-medium '>
-                Get Started
-              </button>
+            ) : (
+              <Link href='/Login' className='hidden sm:block text-gray-700 hover:text-blue-600 font-medium'>
+                Login
+              </Link>
+            )}
               
               {/* Mobile menu button */}
               <button className='md:hidden p-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-gray-100 transition-colors duration-200'>
