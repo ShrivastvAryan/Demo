@@ -15,7 +15,13 @@ connectDB();
 
 app.use('/api/user',userRouter)
 
-
+app.get('/api/healthcheck', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    message: 'Server is healthy',
+    timestamp: new Date().toISOString()
+  });
+});
 
 app.listen(port,(error)=>{
     if(!error){

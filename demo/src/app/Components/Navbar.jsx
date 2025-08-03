@@ -42,21 +42,21 @@ const Navbar = () => {
 
             {/* Navigation Links */}
             <div className='hidden md:flex items-center space-x-8'>
-              <a href="#" className='text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group'>
+              <a href="#" className='text-black hover:text-blue-600 font-medium '>
                 Home
-                <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-200 group-hover:w-full'></span>
+                
               </a>
-              <a href="#" className='text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group'>
+              <a href="#" className='text-black hover:text-blue-600 font-medium '>
                 Data
-                <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-200 group-hover:w-full'></span>
+                
               </a>
-              <a href="#" className='text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group'>
+              <a href="#" className='text-black hover:text-blue-600 font-medium '>
                 About
-                <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-200 group-hover:w-full'></span>
+                
               </a>
-              <a href="#" className='text-gray-700 hover:text-purple-600 font-medium transition-colors duration-200 relative group'>
+              <a href="#" className='text-black hover:text-blue-600 font-medium '>
                 Contact
-                <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 transition-all duration-200 group-hover:w-full'></span>
+                
               </a>
             </div>
 

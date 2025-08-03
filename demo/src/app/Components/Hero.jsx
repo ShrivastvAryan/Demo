@@ -1,10 +1,34 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { User, TrendingUp, Target, Award, IndianRupee } from 'lucide-react';
+import { User, TrendingUp, Target, Award, IndianRupee,Lock } from 'lucide-react';
 import { toast } from 'react-toastify';
 
 const Hero = () => {
   const [userData, setUserData] = useState(null);
+  
+  const prizes=[
+    {
+      id:1,
+      level:'Level One',
+      amount:'₹20,000'
+    },
+    {
+      id:2,
+      level:'Level Two',
+      amount:'₹30,000'
+    },
+    {
+      id:3,
+      level:'Level Three',
+      amount:'₹40,000'
+    },
+    {
+      id:4,
+      level:'Level Four',
+      amount:'₹50,000'
+    },
+
+  ]
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -123,7 +147,7 @@ const Hero = () => {
                 <p className="text-sm text-gray-600">Total Amount Raised</p>
               </div>
 
-              {/* Goals Achieved */}
+              {/* Goals Achieved , they are hard coded */}
               <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -136,36 +160,30 @@ const Hero = () => {
                 <h3 className="text-3xl font-bold text-gray-900 mb-1">8</h3>
                 <p className="text-sm text-gray-600">Campaigns Completed</p>
               </div>
-
-              {/* Impact Score */}
-              <div className="bg-gradient-to-r from-pink-50 to-pink-50 rounded-xl p-6 border border-pink-200">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center">
-                    <Award className="w-6 h-6 text-pink-600" />
-                  </div>
-                  <span className="text-xs text-pink-600 font-medium bg-purple-100 px-2 py-1 rounded-full">
-                    Top 10%
-                  </span>
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-1">95</h3>
-                <p className="text-sm text-gray-600">Impact Score</p>
-              </div>
-
-              {/* People Helped */}
-              <div className="bg-gradient-to-r from-red-50 to-red-50 rounded-xl p-6 border border-red-200">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                    <User className="w-6 h-6 text-red-600" />
-                  </div>
-                  <span className="text-xs text-red-600 font-medium bg-orange-100 px-2 py-1 rounded-full">
-                    +23 this week
-                  </span>
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-1">247</h3>
-                <p className="text-sm text-gray-600">Lives Impacted</p>
-              </div>
             </div>
           </div>
+          
+      
+                  {/* Hard Coded */}
+      <div className='w-full bg-white mt-4 rounded-lg shadow-lg'>
+      <h1 className='font-bold p-4 text-2xl'>Your Rewards</h1>
+
+       {/* Container for reward cards */}
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4'>
+      {prizes.map((prize, key) => (
+        <div
+        key={key}
+        className="h-40 rounded-xl bg-pink-200 border border-pink-500 flex flex-col items-center justify-center transform transition-transform duration-300 hover:scale-105"
+      >
+        <Lock className='w-16 h-16 text-pink-500' />
+        <p className='font-semibold text-center text-sm mt-4 mx-2 text-pink-500'>
+          Collect {prize.amount} or more to collect this
+        </p>
+        </div>
+       ))}
+      </div>
+       </div>
+       
         </div>
       </div>
     </div>
