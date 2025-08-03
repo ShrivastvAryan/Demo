@@ -1,0 +1,127 @@
+import React from 'react'
+import { User, TrendingUp, Target, Award, IndianRupee } from 'lucide-react'
+
+const Hero = () => {
+  return (
+    <>
+      <div className='max-w-7xl mx-auto p-6 my-4 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen'>
+        {/* Welcome Section */}
+        <div className='mb-8'>
+          <h1 className='text-3xl font-bold text-gray-900 mb-2'>Welcome back, Aryan!</h1>
+          <p className='text-gray-600'>Here's your impact summary and fundraising progress</p>
+        </div>
+
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+          
+          {/* Profile Card */}
+          <div className='lg:col-span-1'>
+            <div className='bg-white rounded-2xl shadow-lg border border-gray-200 p-8 h-fit'>
+              <div className='flex flex-col items-center text-center'>
+                {/* Profile Avatar */}
+                <div className='relative mb-6'>
+                  <div className='w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center shadow-lg'>
+                    <User className='w-16 h-16 text-white' strokeWidth={1.5} />
+                  </div>
+                  <div className='absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center'>
+                    <div className='w-2 h-2 bg-white rounded-full'></div>
+                  </div>
+                </div>
+                
+                {/* Profile Info */}
+                <h2 className='text-2xl font-bold text-gray-900 mb-2'>Aryan Shrivastava</h2>
+                <p className='text-sm text-gray-500 mb-4'>Community Fundraiser</p>
+                
+                {/* Referral Code */}
+                <div className='w-full bg-gray-50 rounded-lg p-4 border border-gray-200'>
+                  <p className='text-xs text-gray-500 uppercase tracking-wide mb-1'>Referral Code</p>
+                  <p className='font-mono text-lg font-semibold text-blue-600'>UJ2344A56G</p>
+                  <button className='mt-2 text-xs text-blue-600'>
+                    Copy Code
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Dashboard Stats */}
+          <div className='lg:col-span-2'>
+            <div className='bg-white rounded-2xl shadow-lg border border-gray-200 p-8'>
+              <div className='flex items-center justify-between mb-8'>
+                <h2 className='text-2xl font-bold text-gray-900'>Your Dashboard</h2>
+                <div className='flex items-center gap-2 text-green-600'>
+                  <TrendingUp className='w-5 h-5' />
+                  <span className='text-sm font-medium'>+12% this month</span>
+                </div>
+              </div>
+
+              {/* Stats Grid */}
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mb-8'>
+                
+                {/* Total Raised */}
+                <div className='bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200'>
+                  <div className='flex items-center justify-between mb-4'>
+                    <div className='w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center'>
+                      <IndianRupee className='w-6 h-6 text-green-600' />
+                    </div>
+                    <span className='text-xs text-green-600 font-medium bg-green-100 px-2 py-1 rounded-full'>
+                      +₹5,200
+                    </span>
+                  </div>
+                  <h3 className='text-3xl font-bold text-gray-900 mb-1'>₹40,000</h3>
+                  <p className='text-sm text-gray-600'>Total Amount Raised</p>
+                </div>
+
+                {/* Goals Achieved */}
+                <div className='bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200'>
+                  <div className='flex items-center justify-between mb-4'>
+                    <div className='w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center'>
+                      <Target className='w-6 h-6 text-blue-600' />
+                    </div>
+                    <span className='text-xs text-blue-600 font-medium bg-blue-100 px-2 py-1 rounded-full'>
+                      3 active
+                    </span>
+                  </div>
+                  <h3 className='text-3xl font-bold text-gray-900 mb-1'>8</h3>
+                  <p className='text-sm text-gray-600'>Campaigns Completed</p>
+                </div>
+
+                {/* Impact Score */}
+                <div className='bg-gradient-to-r from-pink-50 to-pink-50 rounded-xl p-6 border border-pink-200'>
+                  <div className='flex items-center justify-between mb-4'>
+                    <div className='w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center'>
+                      <Award className='w-6 h-6 text-pink-600' />
+                    </div>
+                    <span className='text-xs text-pink-600 font-medium bg-purple-100 px-2 py-1 rounded-full'>
+                      Top 10%
+                    </span>
+                  </div>
+                  <h3 className='text-3xl font-bold text-gray-900 mb-1'>95</h3>
+                  <p className='text-sm text-gray-600'>Impact Score</p>
+                </div>
+
+                {/* People Helped */}
+                <div className='bg-gradient-to-r from-red-50 to-red-50 rounded-xl p-6 border border-red-200'>
+                  <div className='flex items-center justify-between mb-4'>
+                    <div className='w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center'>
+                      <User className='w-6 h-6 text-red-600' />
+                    </div>
+                    <span className='text-xs text-red-600 font-medium bg-orange-100 px-2 py-1 rounded-full'>
+                      +23 this week
+                    </span>
+                  </div>
+                  <h3 className='text-3xl font-bold text-gray-900 mb-1'>247</h3>
+                  <p className='text-sm text-gray-600'>Lives Impacted</p>
+                </div>
+              </div>
+
+          
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default Hero
